@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKU Generator</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module"  src="https://pyscript.net/releases/2024.1.1/core.js"> </script>
+    <script type="py" src="main.py"></script>
+
+    <style>
+
+        @font-face {
+            font-family: "Poppins";
+            src: url("Poppins-Medium.ttf") format("truetype");
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background-color:#FFF0DE;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            height: 65px;
+            background-color: #694A47;
+            color: #96C1C5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            font-size: 20px;
+        }
+
+        .navbar a {
+            color:#96C1C5;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 30px;
+            flex: 1;
+        }
+
+         .card {
+            width: 500px;
+            background-color: #694A47;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background: #96C1C5;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .card-header h1 {
+            margin: 8px 0 0;
+            font-size: 30px;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #96C1C5;
+        }
+
+        select,
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 9px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+          .item-box {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 9px 12px;
+            margin-bottom: 7px;
+            background-color:#eee3d5;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .item-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            border-color: #96C1C5;
+        }
+
+        .item-box input {
+            width: 18px;
+            height: 18px;
+            margin: 0 12px 0 0;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .item-box span {
+            flex: 1;
+            color: #694A47;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .item-box strong {
+            color: #694A47;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #FFF0DE;
+            color: #694A47;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .output {
+            border-top: 1px solid #96C1C5;
+            margin-top: 14px;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            min-height: 30px;
+            color: #FFF0DE;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <strong>Skewer</strong>
+
+        <div>
+            <a href="index.html">SKU Generator</a>
+            <a href="receipt.html">Receipt Generator</a>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="card-header">
+                <h1>  ݁⋆ ۶ৎ ݁˖ . ݁ whim's koffi shop.. </h1>
+            </div>
+
+            <div class="card-body">
+
+                <label>Choose your emotional support  (๑ᵔ⤙ᵔ๑)</label>
+
+                <div class="item-box">
+                    <input type="checkbox" id="item1" value="99">
+                    <span>emotional support rock</span>
+                    <strong>₱99</strong>
+                </div>
+
+                <div class="item-box">
+                    <input type="checkbox" id="item2" value="180">
+                    <span> a duck therapist </span>
+                    <strong>₱180</strong>
+                </div>
+
+                <div class="item-box">
+                    <input type="checkbox" id="item3" value="129">
+                    <span> a cup of courage </span>
+                    <strong>₱129</strong>
+                </div>
+
+                <div class="item-box">
+                    <input type="checkbox" id="item4" value="159">
+                    <span> therapy cookie </span>
+                    <strong>₱159</strong>
+                </div>
+
+                <div class="item-box">
+                    <input type="checkbox" id="item5" value="169">
+                    <span> whim's lucky cat & dog..</span>
+                    <strong>₱169</strong>
+                </div>
+
+                <br>
+
+                <button py-click="create_order">Create Order</button>
+
+                <div id="show" class="output">
+                    Your order summary will appear here.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

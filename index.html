@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKU Generator</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module"  src="https://pyscript.net/releases/2024.1.1/core.js"> </script>
+    <script type="py" src="main.py"></script>
+
+    <style> 
+
+        @font-face {
+            font-family: "Poppins";
+            src: url("Poppins-Medium.ttf") format("truetype");
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background-color:#FFF0DE;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            height: 65px;
+            background-color: #694A47;
+            color: #96C1C5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            font-size: 20px;
+        }
+
+        .navbar a {
+            color:#96C1C5;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 390px;
+            flex: 1;
+        }
+
+        .card {
+            width: 550px;
+            background-color: #694A47;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background: #96C1C5;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .card-header h1 {
+            margin: 8px 0 0;
+            font-size: 30px;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #96C1C5;
+        }
+
+        select,
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 9px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #FFF0DE;
+            color: #694A47;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .output {
+            border-top: 1px solid #96C1C5;
+            margin-top: 14px;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            min-height: 30px;
+            color: #FFF0DE;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+
+        <strong>SKEW</strong>
+
+        <div>
+            <a href="index.html">SKU Generator</a>
+            <a href="receipt.html">Receipt Generator</a>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="card-header">
+                <h1> ✶⋆.˚SKU Generator. ݁⋆ ۶ৎ ݁˖ . ݁</h1>
+             </div>
+
+
+            <div class="card-body">
+                <label for="category">Category ᯓ★</label>
+                    <select id="category">
+                        <option value="Companions"> Companions </option>
+                        <option value="Objects"> Objects</option>
+                        <option value="Pastries_Drinks"> Pastries & Drinks </option>
+                    </select>
+            
+                <label for="product_name"> Product Name 𝄞⋆ ݁♪ . </label>
+                <input type="text"id="product_name"placeholder="e.g. a cup of courage">
+
+                <label for="quantity">Stock Quantity</label>
+
+                <input type="number"id="quantity"placeholder="e.g. 50">
+
+                <button py-click="SKU_generator">Generate SKU </button>
+                <div id="sku_output" class="output"> Your generated SKU will appear here.</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+   
